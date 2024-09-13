@@ -1,0 +1,23 @@
+Parte em html
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> </title>
+</head>
+
+<body>
+  <h1>Mirror fasion</h1>
+  <h2>Bem vindo à Mirror Fasion,sua loja de roupas e acessórios.</h2>
+  <p>Nenhum item foi encontrado</p>
+  <br/>
+  <img src="img/sol2.png" alt="foto do produto">
+  <figcaption>Fuzz cardigan por R$ 129,90</figcaption>
+</figure>
+
+</body>
+
+
+</html>
+
