@@ -1,0 +1,181 @@
+Parte do codigo em html
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Atividade</title>
+  <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/estilo.css">
+
+</head>
+
+
+<body>
+  <!-- cria um formulario com campos de nome, email, mensagem e um botão de enviar -->
+  <form>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+
+    <label for="email">email:</label>
+    <input type="email" id="email" name="email" placeholder="Digite seu email">
+
+    <label for="mensagem">Mensagem:</label>
+    <textarea id="mensagem" name="mensagem" rows="4" cols="40" placeholder="Digite sua mensagem"></textarea>
+
+    <input type="submit" value="Enviar" onclick=" mensagemCadastro();">
+
+    <p>Mudando a cor da página:</p>
+    <div>
+      <label for="radioLaranja">Laranja</label>
+      <input type="radio" id="radioLaranja" name="radio" value="Laranja" onchange="alteracor();">
+
+    </div>
+    <div>
+      <label for="radioPreto">Preto</label>
+      <input type="radio" id="radioPreto" name="radio" value="Preto" onchange="alteracor();">
+    </div>
+    <div>
+      <label for="radioBranco">Branco</label>
+      <input type="radio" id="radioBranco" name="radio" value="Branco" onchange="alteracor();">
+    </div>
+
+  </form>
+  <!-- Cria um rodapé  por ícones de redes sociais-->
+  <footer>
+    <p>Siga-nos</p>
+    <ul>
+      <!-- Cria um link para uma rede social -->
+      <li><a href="#" class="fa fa-facebook"></a></li>
+      <li><a href="#" class="fa fa-twitter"></a></li>
+      <li><a href="#" class="fa fa-instagram"></a></li>
+    </ul>
+  </footer>
+  <script src="js/acoesmensagemcor.js"></script>
+
+
+</body>
+
+</html>
+
+
+Parte do código em css
+
+/* define o estilo do formulario*/
+form {
+  width: 300px;
+  margin: 20px auto;
+  /* 
+  20px: define a margem superior e inferior como 20 pixels
+  auto: define a margens laterias  como automáticas. Isso significa     que o navegador calculará automaticamente a largura das margens       laterais para centralizar os elementos na horizontal. 
+  */
+
+  border: 1px solid gray;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  /* 
+  rgba((0, 0, 0.3); quanto menor o valor no rgba mais transparente fica o elemento.
+  */
+
+  padding: 10px;
+}
+
+/* define o estilo dos campos do formulario*/
+input,
+text.area {
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+}
+
+/* define o estilo do botao de enviar*/
+input[type=submit] {
+  background: linear-gradient(to right, blue, cyan);
+  /*cor gradiante*/
+  color: white;
+  border: none;
+  border-radius: 5px;
+  /* borda arredondada*/
+  cursor: pointer;
+}
+
+/* define o estilo do rodape */
+footer {
+  width: 100%;
+  height: 100px;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+/* define o estilo da lista de icones de redes socias*/
+ul {
+  list-style-type: none;
+  /*  remove os marcadores da lista*/
+  padding-inline-start: 0px !important;
+  /*
+  padding-inline-start: 0px;
+  define o preenchimento inicial de um elemento com 0 pixels*/
+}
+
+/* define o estilo dos itens da lista*/
+li {
+  display: inline-block;
+  /* coloca os itens lado a lado*/
+  margin: 10px;
+}
+
+/* define o estilo dos links  dos icons de redes sociais*/
+a {
+  text-decoration: none;
+  /* remove o sublinhado das linhas*/
+  text-transform: uppercase;
+  /* transforma o texto em maiusculo */
+  color: white;
+  transition: transform 2s;
+  /* transform: indica a transição sera aplicada a propiedades de tranformar elemeto.*/
+}
+
+/* define o estilo dos links quando o mouse passa por cima*/
+a:hover {
+  color: #999999 !important;
+  transform: scale(1.3);
+  /* o comando  transform: scale(1.3); aumenta o tamanho do elemeto em 30%*/
+}
+
+/* define o estilo dos links  quando são visitados*/
+a:visited {
+  color: gray;
+}
+
+
+
+Parte do codigo em java script
+
+// Selecione os elementos do HTML
+var radioLaranja = document.getElementById("radioLaranja");
+var radioPreto = document.getElementById("radioPreto");
+var radioBranco = document.getElementById("radioBranco");
+var body = document.body;
+function alteracor() {
+  //Se o radiobutton laranja estiver marcado,muda o fundo para      laranja ea a fonte para preto
+  if (radioLaranja.checked) {
+    body.style.backgroundColor ="orange";
+    body.style.color ="black";
+  }
+
+  //Se o radiobutton preto estiver marcado,muda o fundo para        preto e a fonte para branco
+  if (radioPreto.checked) {
+    body.style.backgroundColor = "black";
+    body.style.color = "white";
+  }
+  //Se o radiobutton branco estiver marcado,muda o fundo para       branco e a fonte para preto
+  if (radioBranco.checked) {
+    body.style.backgroundColor ="white";
+    body.style.color ="black";
+
+  }
+}
+function mensagemCadastro() {
+  alert("Cadastro realizado com sucesso!")
+}
